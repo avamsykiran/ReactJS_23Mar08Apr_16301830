@@ -1,1 +1,126 @@
 https://github.com/avamsykiran/ReactJS_23Mar08Apr_16301830.git
+
+Lab
+----------------------------------
+
+    VSCode IDE
+    Node    Javascript execution environment
+
+            node --version
+
+NodeJS
+====================================
+
+    Javascript execution environment,
+
+    Creating a node project
+    -----------------------------
+        create a directory
+        inside that directory 'npm init -y'
+    
+    npm     node package manager        build tool
+    package.json        as the project meta data / config file.
+
+    npm install package-name --save     
+    npm install package-name --dev-save
+    npm install -g package-name
+
+
+ReactJS
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+    javascript library to develop SPA.
+
+    Dynamic Web Application
+
+    Web Server                                                      Client/Browser
+        ServerSide executing Programs           <---REQ (URL) -----
+            (servlets or jsp/.aspx,ASP.net)
+
+                        -- RESPONSE (html + css + javascript)-------> Load HTML, Load CSS,
+                                                                         Load Javascript
+    
+    Single Page Application
+    
+    Web Server                                                      Client/Browser
+        (javascript code +singlePage.html + css)   <---REQ1 (URL) -----
+ 
+            -- RESPONSE (singlePage.html + css + javascript)-------> Load HTML, Load CSS,
+                                                                         Load Javascript
+    
+        ServerSide executing Programs             <--REQ2 (URL) ------- 
+            (REST api / REST WebServices)       
+                                ---- RESPONSE (data.xml/data.json) -->  JS recevie the data         
+                                                                        and chagnes apart of the 
+                                                                        singlePage.html
+                                                                        to show the data.
+
+    compose the source code                             VSCode
+    bundle teh code and minify the code.                    npm
+    thrid party package dependecnies to be managed          npm
+    deploy this code in a server.                           npm
+    run it on a browsers                                chrome
+
+
+    Creating a react Application
+    ------------------------------------------
+
+    Method1:
+            create a folder
+            inside the folder, 'npm init -y' 
+            using npm install , the below libraries msut be installed
+                react-dom.js
+                react-scripts.js
+                jasmine.js
+                minify.js
+                ...additional libraries as needed
+            create a index.html
+            create a js file to containe the SPA code.
+            link the file with index.html
+
+    Method2
+            npm install -g create-react-app
+            create-react-app app-name
+
+            (or)
+
+            npx create-react-app app-name
+            
+    SPA Component
+    -------------------------------------------------
+
+        a Component is a samll section of the singlePage index.html
+
+        Component  = html + JS
+
+    React Component
+    ------------------------------------------------------------
+        a component is a user developed html element.    
+
+        <h1>    a open tag
+        </h1>   a close tag
+
+        <h1>content</h1>    an html element
+
+
+        React Component = html + state + props + js behavioural code
+
+            1. Class Components
+            2. Function Components
+            3. Pure Function Components
+            4. High Order Components
+
+    JSX - Javascript extended
+    ----------------------------------
+
+        JSX = html + javascript
+
+        
+
+
+
+
+
+
+
+
