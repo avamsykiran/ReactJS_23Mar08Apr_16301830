@@ -115,7 +115,38 @@ ReactJS
 
         JSX = html + javascript
 
+        <div>
+            {javascript code.....}
+        </div>
+
+        1. all html elements msut be written in lower case
+        2. {javascriptExpression} must return a JSX element
+                a JSX element can be a number, date, stribng or another html or react element.
+        3. 'class' attriubte is not allowed; className attribute is sued instead.
+        4. react component must be initial capaitalized
+
+    
+1. Class Components
+-----------------------------------
+
+    class Header extend React.Component {
+
+        render(){
+            return anHtmlOrReactElement
+        }
+    }
+
+    ***the render method must return one and only root element
         
+    React Component state
+    ------------------------------------
+
+        the state in react component is immutable (not modifieable).
+
+        but it is replacable using a react component method setState();
+
+    
+
 
 
 
