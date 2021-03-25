@@ -1,11 +1,23 @@
 import React from 'react';
+import Activites from './components/activities/Activities';
+import Footer from './components/footer/footer';
+import Header from './components/header/Header';
 
-class App extends React.Component{
-  render(){
+class App extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state={
+      appTitle:"Activity Manager"
+    }
+  }
+  render() {
     return (
-      <header className="jumbotron mb-0">
-        <h1>Activity Tracker</h1>
-      </header>
+      <React.Fragment>
+        <Header title={this.state.appTitle}/>
+        <Activites />
+        <Footer />
+      </React.Fragment>
     );
   }
 }

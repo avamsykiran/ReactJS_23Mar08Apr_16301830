@@ -145,6 +145,35 @@ ReactJS
 
         but it is replacable using a react component method setState();
 
+2. Function Components
+-------------------------------
+        is a javascript function that
+        returns an html dom element and
+        accepts the 'props' as an argument.
+
+3. Pure Function Components
+-----------------------------
+        is a functional component that does not trigger changes to other
+        components.
+
+4. High Order Components
+------------------------------------
+        is a function that accepts one component and adds additional features to it
+        and returns it as a new component.
+
+
+Event Bubbling
+--------------------
+    is a desing where the child component can bubble the event 
+    to its parent, and teh parent will respond or handle that event.
+
+Routing
+---------------------
+
+    display a specific component in response to change in the URL.
+
+    install react-router react-router-dom
+
     
 
 
