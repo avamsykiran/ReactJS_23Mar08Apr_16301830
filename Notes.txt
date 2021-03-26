@@ -161,7 +161,6 @@ ReactJS
         is a function that accepts one component and adds additional features to it
         and returns it as a new component.
 
-
 Event Bubbling
 --------------------
     is a desing where the child component can bubble the event 
@@ -173,6 +172,15 @@ Routing
     display a specific component in response to change in the URL.
 
     install react-router react-router-dom
+
+    BrowserRouter
+                        is a aprent element
+                        that has to containt the routing config.
+    
+    Switch              that contains the lsit of Route (S)
+
+    Route               path
+                        component
 
     
 

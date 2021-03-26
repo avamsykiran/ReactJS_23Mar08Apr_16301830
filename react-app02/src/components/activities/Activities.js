@@ -1,32 +1,19 @@
 import React, { Component } from 'react';
 import ActivityRow from './ActivityRow';
+import activityService from '../../service/ActivityService';
 
 class Activites extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            activities: [
-                { id: 1, name: 'Create System Design', assignedTo: 'Srinu', assignedBy: 'Vamsy', status: 'Submitted' },
-                { id: 2, name: 'Create Rest API', assignedTo: 'Srinu', assignedBy: 'Vamsy', status: 'Under Review' },
-                { id: 3, name: 'Create React UI', assignedTo: 'Srinu', assignedBy: 'Vamsy', status: 'Reviewed' },
-                { id: 4, name: 'Create Build Plan', assignedTo: 'Srinu', assignedBy: 'Vamsy', status: 'In Progress' },
-                { id: 5, name: 'Create Deploy Plan', assignedTo: 'Srinu', assignedBy: 'Vamsy', status: 'In Progress' }
-            ]
+            activities: activityService.getAll()
         };
     }
 
     delete = (id) => {
-
-        /*  let ats = [...this.state.activities];
-          let index = ats.findIndex(a => a.id==id);
-          if(index>-1){
-              ats.splice(index,1);
-              this.setState({...this.state,activities:ats});
-          } */
-
         if (window.confirm(`Are your sure of deleting activity#${id}`)) {
-            let ats = this.state.activities.filter(a => a.id != id);
-            this.setState({ ...this.state, activities: ats });
+            activityService.delete(id);
+            this.setState({ ...this.state, activities: activityService.getAll() });
         }
     }
 
