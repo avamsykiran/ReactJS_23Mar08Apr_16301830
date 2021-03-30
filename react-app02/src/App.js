@@ -4,6 +4,7 @@ import Activites from './components/activities/Activities';
 import ActivityForm from './components/activities/ActivityForm';
 import Footer from './components/footer/footer';
 import Header from './components/header/Header';
+import SeriesDeck from './components/series/SeriesDeck';
 
 class App extends React.Component {
 
@@ -19,6 +20,7 @@ class App extends React.Component {
         <Header title={this.state.appTitle} />
         <Switch>
           <Route path='/new' component={ActivityForm} />
+          <Route path='/series' component={SeriesDeck} />
           <Route path='/' exact component={Activites} />
         </Switch>
         <Footer />

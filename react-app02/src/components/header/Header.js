@@ -12,6 +12,9 @@ function Header(props) {
                 <li className="nav-item">
                     <Link to="/new" className="nav-link">Add Activity</Link>
                 </li>
+                <li className="nav-item">
+                    <Link to="/series" className="nav-link">Promise demo</Link>
+                </li>
             </ul>
         </nav>
     );

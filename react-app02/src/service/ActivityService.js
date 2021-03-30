@@ -29,6 +29,16 @@ class ActivityService{
     delete(id) {
         this.activities = this.activities.filter(a => a.id!==id);
     }
+
+    isValidActivityId(id){
+        let valid=true;
+
+        if(id<=0 || this.activities.find(a => a.id===id )){
+            valid=false;
+        }
+
+        return valid;
+    }
 }
 
 const activityService = new ActivityService();
