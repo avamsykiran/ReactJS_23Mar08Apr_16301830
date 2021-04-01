@@ -13,10 +13,26 @@ class ActivityList extends Component {
         };
     }
 
-    componentDidMount = () => {
+    loadData = () =>{
         activityService.getAllActivities().then(
             (response) => {
                 this.setState({ ...this.state, activities: response.data });
+            },
+            (err) => {
+                console.log(err);
+                this.setState({ ...this.state, errMsg: "Sorry, Could not contact server." });
+            }
+        );
+    }
+
+    componentDidMount = () => {
+       this.loadData();
+    }
+
+    delete = (id) => {
+        activityService.deleteActivityById(id).then(
+            (response) => {
+                this.loadData();
             },
             (err) => {
                 console.log(err);
@@ -53,7 +69,7 @@ class ActivityList extends Component {
                         </thead>
                         <tbody>
                             {this.state.activities.map(
-                                a => <ActivityRow activity={a} />
+                                a => <ActivityRow key={a.id} activity={a} delete={this.delete} />
                             )}
                         </tbody>
                     </table>
