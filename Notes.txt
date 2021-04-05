@@ -166,23 +166,192 @@ Event Bubbling
     is a desing where the child component can bubble the event 
     to its parent, and teh parent will respond or handle that event.
 
+React Component LifeCycle
+--------------------------------------------------------
+
+        While Component Creation and Insertion Into DOM (Mounting)
+
+                constructor()
+                render()
+                componentDidMount()
+
+        While Component Updates (re-renders) due to a change in props/state
+
+                shouldComponentUpdate()
+                render()
+                componentDidUpdate()
+
+        While Component unmounts ..
+
+                componentWillUnmount()
+
+        While Error at the time of rendering...
+
+                componentDidCatch()
+
+        Component Instance Methods
+
+                setState()
+                forceUpdate()
+                
+React Hooks
+--------------------------------------------------------
+
+        Hooks are functions that let you “hook into” React state and lifecycle 
+        features from function components.
+
+        1. Only call Hooks at the top level. 
+        2. Only call Hooks in functional components.
+
+
+        State Hook                     const [count, setCount] = useState(0);
+          
+          equi to setState()
+
+        Effect Hook                     useEffect(() => {
+                                           //task that shall happen
+                                        },[]); 
+
+          equi to componentDidMount, 
+          componentDidUpdate 
+          and  componentWillUnmount
+
+
+Integrate with REST api
+---------------------------------
+
+        json-server             
+
+                is a rest api generating tool 
+                given a json file, but only
+                for practise or test purpose.
+
+
+        axios
+
+                is a http client library.
+                using this we can make any http
+                request .
+
+                get(url) :Promise
+                post(url,reqeustBody) :Promise
+                put(url,reqeustBody) :Promise
+                delete(url) :Promise
+                patch(url,reqeustBody) :Promise
+
+                let p = axios.get('http://localhost:8989/todos');
+
+                p.then(
+                  (data) => {...}, //called on sucessful execution
+                  (error) => {....}  //called on errorsome execution
+                );
+
 Routing
----------------------
+--------------------------------------------------------
 
-    display a specific component in response to change in the URL.
+        react-router
 
-    install react-router react-router-dom
+                        <Redirect to="" />
 
-    BrowserRouter
-                        is a aprent element
-                        that has to containt the routing config.
-    
-    Switch              that contains the lsit of Route (S)
+                        navigating programatically
 
-    Route               path
-                        component
+        react-router-dom
 
-    
+                        BrowserRouter as Router
+                        Route
+                        Switch
+                        Link
+
+
+                        <Router>
+                                <CommponnetThatCommonlyAppera />
+
+                                <Switch>
+                                        <Route path="/" exact><Component1 /></Route>
+                                        <Route path="/about" component={component2} />
+                                        <Route path="/edit/:id" component={component2} />
+                                </Switch>                                
+                        </Router>
+
+                        <Link to="about">Link Text</Link>
+
+                        props.match.params.id  gives access to the Route PArams.
+
+Redux
+---------------------------------------------------------
+
+                is a centralized immutable state management
+                library.
+
+                STORE
+
+                        is the centralized repository of data.
+                        All application state is held by a store.
+
+                        typically, but neccassacrily, we will have
+                        one store fro one application.
+
+                REDUCER
+
+                        is a pure function, that processes the data
+                        each time a action is dispatched.
+
+                        will receive the older state as input and an action
+                        makes changes in line with the given action to the given state
+                        and returns the new state.
+
+                ACTION
+
+                        an action typically represents an operation.
+
+                        an action has two main parts
+                                type            is the naem of the operation
+                                payload         data required to perform the operation
+
+                        let action = {
+                                        type:"DELETE",
+                                        itemId:5
+                                     };
+
+                        let action = {
+                                        type:"ADD",
+                                        item:{id:5,title:'Pens Box',price:66}
+                                     };         
+
+                DISPATCHER                                                                 
+
+                        is the one who carries an action
+                        from a react component to a reducer.
+
+
+        redux
+                   
+                        let myStore = createStore(reducer);        
+
+        react-redux
+
+                        <Provider store={myStore}>
+                                .......
+                        </Provider>
+
+                        let myHOC = connect();  //creates a high order component
+
+                        //export default TaskList;
+                        export default myHOC(TaskList); 
+                                //HOC will add the state as props to TaskList
+                                //so that the task list can access the data in the state as props.
+                                //also provides a dispatch function in the props
+                                //to request an action from the component.
+
+
+                        connct function accepts 2 optional 
+                        funcation "mapStateToProps","mapDispatcherToProps" as an argument
+
+
+                        let hoc = connect((state)=>{students:[...state.students]});
+
+                        export default hoc(StudentsList);
+
 
 
 
