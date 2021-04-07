@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createStore } from 'redux';
+import ActivityReducer from './activityReducers/ActivityReducer'
+import { Provider } from 'react-redux';
+
+let activityStore = createStore(ActivityReducer);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <Provider store={activityStore}>
+      <App />
+    </Provider>,
   document.getElementById('root')
 );
 
