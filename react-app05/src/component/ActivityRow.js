@@ -1,6 +1,6 @@
 
 import { connect } from 'react-redux';
-import { DELETE_ACTIVITY } from '../activityReducers/actionTypes'
+import { DELETE_ACTIVITY,MARK_ACTIVITY_EDITABLE } from '../activityReducers/actionTypes'
 
 const ActivityRow = (props) => (
     <tr>
@@ -8,7 +8,7 @@ const ActivityRow = (props) => (
         <td>{props.activity.title}</td>
         <td>{props.activity.status}</td>
         <td>
-            <button className="btn btn-primary btn-sm mr-2">
+            <button className="btn btn-primary btn-sm mr-2" onClick={(e) => {props.edit(props.activity.id);}}>
                 <i className="fa fa-pencil"> Edit</i>
             </button>
             <button className="btn btn-danger btn-sm" onClick={(e) => {props.delete(props.activity.id);}}>
@@ -19,7 +19,8 @@ const ActivityRow = (props) => (
 );
 
 const mapDispatchToProps = (dispatch) => ({
-    delete: (id) =>{dispatch({type:DELETE_ACTIVITY,payload:id})}
+    delete: (id) =>{dispatch({type:DELETE_ACTIVITY,payload:id})},
+    edit: (id) =>{dispatch({type:MARK_ACTIVITY_EDITABLE,payload:id})}
 });
 
 const connectorToStore = connect(null,mapDispatchToProps) //HOC

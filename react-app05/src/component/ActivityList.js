@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import ActivityForm from "./ActivityForm";
 import  ActivityRow  from './ActivityRow';
 
 const ActivityList = (props) => (
@@ -13,7 +14,10 @@ const ActivityList = (props) => (
                 </tr>
             </thead>
             <tbody>
+                <ActivityForm />
                 {props.activities.map(a => (
+                    a.editable?
+                    <ActivityForm key={a.id} activity={a} /> :
                     <ActivityRow key={a.id} activity={a} />
                 ))}
             </tbody>
