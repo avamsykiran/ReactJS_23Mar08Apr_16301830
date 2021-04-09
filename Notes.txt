@@ -352,6 +352,21 @@ Redux
 
                         export default hoc(StudentsList);
 
+        Thunk ===> Bridge
+        ==============================
+
+                Thunk means a function that returns another function?
+
+                store <---- Reducer  <---action--- Component
+                 |
+                 |-------------------------------->
+
+                                     <---action------------------------------------
+                store <---- Reducer  <---actionSucess--- ApiCall <---thunkAction--- Component
+                 |                   <---actionErr---
+                 |
+                 |------------------------------------------------------------------>
+
 
 
 
