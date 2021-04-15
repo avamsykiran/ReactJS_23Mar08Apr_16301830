@@ -1,0 +1,21 @@
+{
+    "depts":[
+        {
+            "id":101,
+            "title":"Java Developers"
+        },
+        {
+            "id":102,
+            "title":"UI Developers"
+        }
+    ],
+    "emps":[
+        {
+            "id":1,
+            "name":"Vamsy Kiran",
+            "hiredate":"2020-01-01",
+            "deptId":101,
+            "basic":45000
+        }
+    ]
+}

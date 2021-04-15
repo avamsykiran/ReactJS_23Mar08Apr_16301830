@@ -11,7 +11,7 @@ export const loadData = () => (dispatch) => {
         .then( resp => dispatch({type:GET_ALL_ACTIVITES,payload:resp.data}))
         .catch( err  => {
             console.log(err);
-            dispatch({type:ERROR,payload:'Sorry! Coudl not receive data!'});
+            dispatch({type:ERROR,payload:'Sorry! Could not receive data!'});
         });
 };
 
