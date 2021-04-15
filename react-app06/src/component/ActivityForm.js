@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { ADD_ACTIVITY, UNMARK_ACTIVITY_EDITABLE, UPDATE_ACTIVITY } from '../activityReducers/actionTypes';
+import { UNMARK_ACTIVITY_EDITABLE } from '../activityReducers/actionTypes';
+import { addActivity,updateActivity } from '../activityReducers/thunkActions';
 
 const ActivityForm = (props) => {
 
@@ -56,8 +57,8 @@ const ActivityForm = (props) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    add: (activity) => { dispatch({ type: ADD_ACTIVITY, payload: activity }) },
-    save: (activity) => { dispatch({ type: UPDATE_ACTIVITY, payload: activity }) },
+    add: (activity) => { dispatch(addActivity(activity)) },
+    save: (activity) => { dispatch(updateActivity(activity)) },
     cancel: (id) => { dispatch({ type: UNMARK_ACTIVITY_EDITABLE, payload: id }) }
 });
 

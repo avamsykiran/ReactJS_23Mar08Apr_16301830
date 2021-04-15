@@ -1,14 +1,14 @@
 {
-    "activities": [
-        {
-            "id": 1,
-            "title": "Create System Design",
-            "status": "Completed"
-        },
-        {
-            "id": 2,
-            "title": "Create Test Suites",
-            "status": "Postponed"
-        }
-    ]
+  "activities": [
+    {
+      "id": 1,
+      "title": "Create System Design",
+      "status": "Completed"
+    },
+    {
+      "id": 2,
+      "title": "Create Test Suites",
+      "status": "Postponed"
+    }
+  ]
 }

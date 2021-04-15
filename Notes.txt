@@ -283,6 +283,9 @@ Redux
                 is a centralized immutable state management
                 library.
 
+                npm install --save redux
+                npm install --save react-redux
+
                 STORE
 
                         is the centralized repository of data.
@@ -352,10 +355,14 @@ Redux
 
                         export default hoc(StudentsList);
 
-        Thunk ===> Bridge
+        Thunk 
         ==============================
 
                 Thunk means a function that returns another function?
+                
+                npm install --save redux        
+                npm install --save react-redux
+                npm install --save redux-thunk
 
                 store <---- Reducer  <---action--- Component
                  |
@@ -369,7 +376,11 @@ Redux
 
 
 
-
+        Saga
+        =============================
+                npm install --save redux
+                npm install --save react-redux
+                npm install --save react-saga
 
 
 

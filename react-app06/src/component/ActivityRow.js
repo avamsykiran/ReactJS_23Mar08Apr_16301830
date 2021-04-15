@@ -20,8 +20,8 @@ const ActivityRow = (props) => (
 );
 
 const mapDispatchToProps = (dispatch) => ({
-    delete: (id) =>{dispatch(deleteActivity(id)},
-    edit: (id) =>{dispatch({type:MARK_ACTIVITY_EDITABLE,payload:id})}
+    delete: (id) => {dispatch(deleteActivity(id))},
+    edit: (id) => {dispatch({type:MARK_ACTIVITY_EDITABLE,payload:id});}
 });
 
 const connectorToStore = connect(null,mapDispatchToProps) //HOC

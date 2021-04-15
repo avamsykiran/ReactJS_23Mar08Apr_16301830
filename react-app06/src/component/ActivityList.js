@@ -19,7 +19,7 @@ const ActivityList = (props) => {
 
             {props.errMsg &&
                 <div className="alert alert-danger">
-                    <strong>{errMsg}</strong>
+                    <strong>{props.errMsg}</strong>
                 </div>
             }
 

@@ -6,9 +6,9 @@ import reportWebVitals from './reportWebVitals';
 import { applyMiddleware, createStore } from 'redux';
 import ActivityReducer from './activityReducers/ActivityReducer'
 import { Provider } from 'react-redux';
-import { ThunkMiddleware } from 'redux-thunk';
+import  thunk  from 'redux-thunk';
 
-let activityStore = createStore(ActivityReducer,applyMiddleware(ThunkMiddleware));
+let activityStore = createStore(ActivityReducer,applyMiddleware(thunk));
 
 ReactDOM.render(
     <Provider store={activityStore}>
