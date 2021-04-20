@@ -383,7 +383,12 @@ Redux
                 npm install --save react-saga
 
 
+        JEST
+        ====================================
+
+                is a javascript library .
+                and is used to write test cases for 
+                any javascript code.
 
 
-
-
+                
